@@ -5,7 +5,7 @@ import { useAsync } from "../../lib/useAsync";
 import { marketplaceService } from "../../services/marketplaceService";
 import { orderService } from "../../services/orderService";
 import { TrustScore } from "../../components/TrustScore";
-import { LoadingSpinner, ErrorState, PageHeader, StatusBadge } from "../../components/ui";
+import { LoadingSpinner, ErrorState, StatusBadge } from "../../components/ui";
 import { useAuth } from "../../context/AuthContext";
 import { formatNaira } from "../../lib/format";
 import { ListingAvailability } from "../../types/enums";

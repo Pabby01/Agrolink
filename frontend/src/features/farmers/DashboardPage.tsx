@@ -38,7 +38,6 @@ function RoleDashboard({ userId, userName, role }: { userId: string; userName: s
   const myOrders = orders ?? [];
   const recentNotifications = notifications?.slice(0, 3) ?? [];
 
-  const roleLabel = role.charAt(0).toUpperCase() + role.slice(1);
   const greeting = role === Role.Farmer ? "Farm Dashboard" : role === Role.Buyer ? "Buyer Dashboard" : "Transport Dashboard";
 
   return (

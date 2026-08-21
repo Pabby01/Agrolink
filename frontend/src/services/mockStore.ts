@@ -394,13 +394,13 @@ class MockStore {
       totalBuyers: this.users.filter((u) => u.role === Role.Buyer).length,
       totalTransporters: this.users.filter((u) => u.role === Role.Transporter).length,
       activeOrders: this.orders.filter((o) =>
-        ![OrderStatus.Completed, OrderStatus.Cancelled].includes(o.status)
+        o.status !== OrderStatus.Completed && o.status !== OrderStatus.Cancelled
       ).length,
       activeShipments: this.shipments.filter((s) =>
-        ![ShipmentStatus.Delivered].includes(s.status)
+        s.status !== ShipmentStatus.Delivered
       ).length,
       openDisputes: this.disputes.filter((d) =>
-        [DisputeStatus.Open, DisputeStatus.UnderReview].includes(d.status)
+        d.status === DisputeStatus.Open || d.status === DisputeStatus.UnderReview
       ).length,
       averageTrust: avg,
     };

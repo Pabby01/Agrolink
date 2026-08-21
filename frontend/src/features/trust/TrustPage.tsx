@@ -1,5 +1,4 @@
 import { useAsync } from "../../lib/useAsync";
-import { TrustScore } from "../../components/TrustScore";
 import { PageHeader, LoadingSpinner, ErrorState } from "../../components/ui";
 import { trustService } from "../../services/trustService";
 import { mockStore } from "../../services/mockStore";

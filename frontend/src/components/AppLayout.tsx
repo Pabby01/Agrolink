@@ -31,7 +31,6 @@ export function AppLayout() {
   }
 
   const navItems = getNavItems(user.role);
-  const isAdmin = user.role === Role.Admin;
 
   function handleLogout() {
     logout();

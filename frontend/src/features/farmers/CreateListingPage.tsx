@@ -13,7 +13,16 @@ export function CreateListingPage() {
   const [error, setError] = useState<string | null>(null);
   const [imagePreview, setImagePreview] = useState<string>("");
 
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<{
+    crop: string;
+    category: string;
+    quantity: string;
+    unit: string;
+    pricePerUnit: string;
+    location: string;
+    availability: ListingAvailability;
+    description: string;
+  }>({
     crop: "",
     category: "Vegetables",
     quantity: "",

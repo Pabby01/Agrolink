@@ -5,9 +5,8 @@ import { useAsync } from "../../lib/useAsync";
 import { marketplaceService } from "../../services/marketplaceService";
 import { LoadingSpinner, ErrorState, EmptyState, PageHeader, StatusBadge } from "../../components/ui";
 import { TrustScore } from "../../components/TrustScore";
-import { ListingAvailability } from "../../types/enums";
-import { useAuth } from "../../context/AuthContext";
 import { Role } from "../../types/enums";
+import { useAuth } from "../../context/AuthContext";
 import { formatNaira } from "../../lib/format";
 
 export function MarketplacePage() {

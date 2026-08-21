@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Sprout, Tractor, ShoppingCart, Truck, ShieldCheck, Leaf, Camera, ArrowRight, ArrowLeft } from "lucide-react";
+import { Sprout, Tractor, ShoppingCart, Truck, ShieldCheck, Camera, ArrowRight, ArrowLeft } from "lucide-react";
 
 export function HowItWorksPage() {
   return (
