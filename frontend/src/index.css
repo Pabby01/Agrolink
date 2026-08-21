@@ -86,3 +86,30 @@ body {
     transform: translateY(0);
   }
 }
+
+/* Safe area for mobile devices (notch, home indicator) */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Ensure mobile viewport behaves correctly */
+@supports (height: 100dvh) {
+  html,
+  body,
+  #root {
+    height: 100dvh;
+  }
+}
+
+/* Status badge availability colors */
+@layer components {
+  .status-in_stock {
+    @apply bg-sage-100 text-forest-700;
+  }
+  .status-limited {
+    @apply bg-gold-100 text-gold-700;
+  }
+  .status-sold_out {
+    @apply bg-red-100 text-red-700;
+  }
+}

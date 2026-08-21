@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { Plus, Eye, Camera, Package, Bell, Leaf } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 import { useAsync } from "../../lib/useAsync";
@@ -14,21 +14,10 @@ export function DashboardPage() {
   if (!user) return null;
 
   if (user.role === Role.Admin) {
-    return <AdminDashboardRedirect />;
+    return <Navigate to="/admin" replace />;
   }
 
   return <RoleDashboard userId={user.id} userName={user.name} role={user.role} />;
-}
-
-function AdminDashboardRedirect() {
-  return (
-    <div>
-      <PageHeader title="Admin Dashboard" subtitle="Redirecting to admin overview..." />
-      <p className="text-forest-500">
-        Visit the <Link to="/admin" className="text-forest-700 underline">Admin Overview</Link> page.
-      </p>
-    </div>
-  );
 }
 
 function RoleDashboard({ userId, userName, role }: { userId: string; userName: string; role: Role }) {

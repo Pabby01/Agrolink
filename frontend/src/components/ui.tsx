@@ -67,6 +67,9 @@ export function StatusBadge({ status }: { status: string }) {
     under_review: "bg-gold-100 text-gold-700",
     resolved: "bg-sage-100 text-forest-700",
     rejected: "bg-red-100 text-red-700",
+    in_stock: "bg-sage-100 text-forest-700",
+    limited: "bg-gold-100 text-gold-700",
+    sold_out: "bg-red-100 text-red-700",
   };
 
   const label = status.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
