@@ -95,6 +95,7 @@ export function DeliveriesPage() {
                 shipment={s}
                 actionLoading={actionLoading === s.id}
                 onPickup={() => doAction(s.id, () => shipmentService.pickupShipment(s.id))}
+                onInTransit={() => doAction(s.id, () => shipmentService.updateShipmentStatus(s.id, ShipmentStatus.InTransit))}
                 onDeliver={() => setSelectedShip(s)}
               />
             ))}
@@ -206,11 +207,13 @@ function ActiveDeliveryCard({
   shipment,
   actionLoading,
   onPickup,
+  onInTransit,
   onDeliver,
 }: {
   shipment: Shipment;
   actionLoading: boolean;
   onPickup: () => void;
+  onInTransit: () => void;
   onDeliver: () => void;
 }) {
   return (
@@ -261,7 +264,13 @@ function ActiveDeliveryCard({
             {actionLoading ? "..." : "Mark Picked Up"}
           </button>
         )}
-        {(shipment.status === ShipmentStatus.PickedUp || shipment.status === ShipmentStatus.InTransit) && (
+        {shipment.status === ShipmentStatus.PickedUp && (
+          <button onClick={onInTransit} className="btn-gold flex-1" disabled={actionLoading}>
+            <Truck className="h-4 w-4" />
+            {actionLoading ? "..." : "Mark In Transit"}
+          </button>
+        )}
+        {shipment.status === ShipmentStatus.InTransit && (
           <button onClick={onDeliver} className="btn-primary flex-1" disabled={actionLoading}>
             <CheckCircle2 className="h-4 w-4" />
             {actionLoading ? "..." : "Mark Delivered"}
