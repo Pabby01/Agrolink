@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-ivory-100 text-forest-900 antialiased;
+  font-feature-settings: "cv11", "ss01";
+}
+
+/* Focus ring */
+*:focus-visible {
+  @apply outline-none ring-2 ring-forest-500 ring-offset-2 ring-offset-ivory-100;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-ivory-200;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-sage-300 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-sage-400;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-forest-800 text-ivory-50 hover:bg-forest-700;
+  }
+  .btn-secondary {
+    @apply btn bg-sage-400 text-forest-900 hover:bg-sage-500;
+  }
+  .btn-gold {
+    @apply btn bg-gold-400 text-forest-900 hover:bg-gold-500;
+  }
+  .btn-outline {
+    @apply btn border border-forest-300 bg-transparent text-forest-800 hover:bg-forest-50;
+  }
+  .btn-danger {
+    @apply btn bg-red-600 text-white hover:bg-red-700;
+  }
+  .card {
+    @apply rounded-xl border border-sage-200 bg-white shadow-sm;
+  }
+  .input {
+    @apply w-full rounded-lg border border-sage-200 bg-white px-3 py-2 text-sm text-forest-900 placeholder:text-forest-400 focus:border-forest-500;
+  }
+  .label {
+    @apply mb-1 block text-sm font-medium text-forest-800;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+}
+
+/* Fade transition */
+.fade-in {
+  animation: fadeIn 0.2s ease-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

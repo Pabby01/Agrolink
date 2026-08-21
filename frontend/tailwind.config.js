@@ -1,0 +1,61 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        forest: {
+          50: "#EAF1EE",
+          100: "#D4E4DC",
+          200: "#A9C9B8",
+          300: "#7FAF8A",
+          400: "#5E9569",
+          500: "#3D7B4E",
+          600: "#2E6140",
+          700: "#234B33",
+          800: "#1B3A29",
+          900: "#173B32",
+          950: "#0E2219",
+        },
+        sage: {
+          50: "#F2F8F4",
+          100: "#E1EEE7",
+          200: "#C4DCCF",
+          300: "#A0C9B1",
+          400: "#7FAF8A",
+          500: "#5E9569",
+          600: "#487A55",
+          700: "#3A6145",
+          800: "#2F4E38",
+          900: "#26402E",
+        },
+        ivory: {
+          50: "#FBFAF5",
+          100: "#F5F1E8",
+          200: "#EBE5D2",
+          300: "#DCD3B8",
+          400: "#C9BC97",
+          500: "#B5A47A",
+          600: "#9E8B5F",
+        },
+        gold: {
+          50: "#FBF6E8",
+          100: "#F5EBC8",
+          200: "#EBD98F",
+          300: "#E0C761",
+          400: "#D6B85A",
+          500: "#C2A347",
+          600: "#A6863B",
+          700: "#836A30",
+          800: "#645025",
+          900: "#4A3B1C",
+        },
+      },
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+        serif: ["Georgia", "serif"],
+      },
+    },
+  },
+  plugins: [],
+};
